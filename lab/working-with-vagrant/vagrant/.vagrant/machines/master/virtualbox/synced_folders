@@ -1,0 +1,1 @@
+{"virtualbox":{"/srv/salt":{"guestpath":"/srv/salt","hostpath":"/home/josiah/Playground/modern-devops/lab/working-with-vagrant/salt","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/josiah/Playground/modern-devops/lab/working-with-vagrant/vagrant","disabled":false,"__vagrantfile":true}}}

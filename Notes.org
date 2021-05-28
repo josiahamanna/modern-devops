@@ -1,0 +1,465 @@
+* Modern DevOps
+** Section 1
+*** 1 The Course Overview Mastering DevOps
+**** In this course, we are going to take a look at...
+1. What is DevOps
+2. The CAMS model
+3. Establishing a DevOps culture
+4. Configuration management
+5. Automation
+6. Measurement
+7. Sharing
+8. Next steps
+**** Reason
+"For the nearly 800 organizations that provided a stock ticker symbol,
+we found that the high performers had nearly 50 percent higher market
+capitalization growth over three years - indicating that DevOps is
+great for IT performance, as we as organizational performance"
+- Gene Kim on the 2015 DevOps Survey
+*** 2 Is DevOps for Me?
+**** Why should I care?
+1. **200x faster deployment, 60% fewer failures**
+2. /DevOps practices enable organizations to move faster without sacrificing reliability and stability. compared to their lower-performing peers, high performers/
+3. Deploy 30 times more frequently and 200 times faster.
+4. Experience 60% fewer service disruptions due to change failures.
+5. Recover 168 times faster when they do experience failure.
+6. Companies with high-performing IT departments are twice as likely to significantly exceed their targets for productivity, market share and profitability, compared to those with lower-performing IT departments.
+7. Job satisfaction is the No. 1 predictor for high organizational performance. And job satisfaction correlates strongly with the tools, processes and culture of DevOps.
+**** What is DevOps
+- DevOps is a collaboration between development, Operations, and other teams with the recognition that we are tasked with achieving common business goals.
+*** 3 The First Way: Systems Thinking
+**** The first way
+1. Consider system as a whole.
+   1. If you speed up one unit of operation faster, and the downstream unit cannot handle it, then you have not made progress as whole.
+**** The first way outcomes
+1. Never passing a known defect to downstream work centers.
+2. Never allowing local optimization to create global degradation.
+3. Always seeking to increase flow.
+4. High Performance. (Increase in speed, increase in quality)
+**** First way barriers
+1. Hand offs are killers to flow (hand offs between functional areas or groups are the most likely places where we see this). Ex: Network engineering team hands off something to systems engineering and people have to wait to that to happen. This is where the work stops. That is why cross functional teams are much better.
+2. If we have to do a hand off there is a technique called as 'value stream mapping'. In this technique we look at the flow of the system. Analyse the bottleneck in the system. Allocate resources to optimize and achieve speed.
+**** Speed   
+1. Speed is important than cutting cost (speed is the new currency of business).
+2. Lead Time: Time from idea to production.
+   1. "Our DevOps journey started when we stopped optimizing technology for cost, and instead, started optimizing for speed" - Courtney Kissler (VP of E-Commerce and Store Technologies Nordstrom)
+*** 4 The Second Way: Feedback Loops
+**** The Second way
+- Feedback is critical. The goal of the second way is to simplify and amplify feedback loops.
+**** Feedback examples
+1. Measure throughput of work through the system. (minimise lead time using feedbacks)
+2. Page load times.
+3. Am I building the right thing.
+4. Metrics (Key Performance Indicators)
+5. Postmortems/learning reviews
+**** The second way barriers
+1. What if I don't see improvements. (May be you are measuring wrong things. Twitter's example where they suffered downtime although the page load time was less)
+2. Understating and responding to all customers, internal and external.
+3. Shortening and amplifying all feedback loops.
+4. Embedding knowledge where we need it.
+**** For more information
+- Read 'The lean startup' by Eric Ries.
+*** 5 The Third Way: Culture of Experimentation
+**** The third way
+1. Culture of continual experimentation and learning from failure.
+2. Repetition is the prerequisite for mastery.
+3. Here other two way come together.
+**** Outcomes of the Third way
+1. Allocating time for the improvement of daily work.
+2. Creating rituals that reward the team for taking risks.
+3. Introducing faults into the system to increase resilience.
+**** Examples of third way
+1. Google's SRE (Site reliability engineering)
+2. Game day where they introduce failure to systems on purpose.
+3. They evaluate following points
+   - Are the trained well enough
+   - Are these failure we anticipated
+   - What happened, how was it fixed or not fixed, and why
+4. They take this feedback and feed it to the systems and build resilience and reliability
+5. Netflix has Chaos Monkey (part of simian army) where they do the same thing.
+**** Barriers to the Third Way
+1. Poor throughput through the system (first way)
+2. Inability to measure success (second way)
+*** 6 The Principle of Kaizan
+**** What is it? 
+- Japanese business philosophy focused on continuous improvement. We cannot be perfect, we can strive to be as close as we can. Again, practice leads to mastery (3rd way). This method is one of the method in lean startup.
+**** Lean Emphasis on:
+1. Systems thinking
+2. Quality
+3. Process control
+4. Minimal inventory
+5. Kaizen
+**** Kaizen in practice.
+- In Toyota they do something called as improvement kata. (by pulling Andon Cord)
+** Section 2
+*** 7 CAMS: Culture
+**** Who developed this Model
+- Damon Edwards
+- John Willis
+- Check out DevOps Cafe
+**** What is it?
+- C: Culture
+- A: Automation
+- M: Measurement
+- S: Sharing
+**** Why Culture
+1. Famous expression: 'Culture eats strategy for breakfast'
+2. High performance organization don't set strategies, but the ingrain it (that's how they do business).
+**** What do we mean by culture?
+1. Service ownership
+2. Hack events
+3. Technical debt grooming
+4. Game days
+5. Destructive testing
+6. Cross functional teams
+7. Agile (scrum, kanbans)
+**** Danger
+- Cargo Culting: Name comes from south pacific in WW2. 
+- Don't copy cultures from other organizations. Copy only the important parts.
+*** 8 CAMS: Automation
+**** Why Automate
+1. We want to move quickly as possible. We need fast.
+2. Automation allows us to achieve that.
+3. We cannot just hire more engineers. Because:
+   1) It is Expensive
+   2) Doesn't scale (too many people, communication problem)
+   3) Humans are Error Prone (Joke: When people do what computers can do, computers get together late at night and laugh at us)
+**** Examples
+1. Infrastructure as Code - Configuration management
+2. Continuous Delivery pipeline
+3. Simian Army (automating testing)
+4. Orchestration Engine (for deployments)
+*** 9 CAMS: Measurement 
+**** Why measure
+1. We need solid data to prove that we are improved by using certain method. This shouldn't driven by feel. We need to measure.
+2. 'If we have data, let's look at data. If all we have are opinions, let's go with mine' - Jim Barksdale
+**** What to measure
+1. We can measure parameters like, CPU utilization, response time, memory utilization, packet loss.
+2. If it is not monitored, it doesn't exist.
+3. If you put application in production which cannot be monitored no one can help you. Invest time on defining nature of the application (up time, memory utilization).
+4. Things to measure:
+   1) How many people signed up today
+   2) How many who signed up converted to paying customers
+   3) How much revenue did we make today
+   4) What are operating cost
+   5) How many call center tickets are coming in
+   6) How much support room activity is there
+**** Examples
+1. Instrumentation platform (Graphite, OpenTSDB, and so on)
+2. Information radiator
+3. Process measurement (Cycle Time, MTTR, and so on)
+*** 10 CAMS: Sharing
+**** Three components of Sharing
+***** Visibility
+- No local optimizations
+- Tell what you did
+- Allows us to get feed back early
+***** Transparency
+- Tell why you did it
+***** Knowledge transfer
+- There shouldn't be situation where one person know about it and no one else knows.
+- Cross functional teams are good.
+**** Examples
+1. Daily stand ups (in agile)
+2. Retrospectives (share)
+3. Documentation (if not bad for speed)
+4. Brown Bags/Tech Talks/Internal conferences
+5. ChatOps (if you want to see how code is deployed to production, go see someone doing it)
+** Section 3: Establishing a DevOps Culture
+*** 11 Traditional Versus DevOps SDLC (Software Development Life Cycle)
+**** Traditional SDLC
+- [weeks/months: {product -> development/testing -> Release}] => [years: {operation}]
+- DevOps methodology made people realize that company only makes money when the software is in production.
+- Toyota's 'Just In Time' manufacturing is an example.
+- The more the software sits and waits, the more money we are going to loose.
+- And one the software is in production, it should perform well, less downtime and engage the customers.
+[[./slides/11 Traditional Versus DevOps SDLC/traditioonal-sdlc.png]]
+**** DevOps SDLC
+- Operation is at the center: We don't wait to get code in production. We stream line the code to production as quickly, as safely as possible.
+- Teams work closely as possible (cross functional teams if we are blessed)
+- planning -> coding -> build -> test -> deploy -> release -> monitor
+  [[./slides/11 Traditional Versus DevOps SDLC/devops-sdlc.png]]
+**** The Three ways
+- First way: Increasing flow
+- Second way: Get the feedback as quick as possible
+- Third way: Cultural experimentation and learning from failure. Depends on first and second way. Deploy quickly and get feedback
+[[./slides/11 Traditional Versus DevOps SDLC/the-three-ways.png]]
+*** 12 Service Ownership
+**** You wrote it, you run it
+1. This statement is given by Werner Vogeles (CTO of Amozon)
+2. If your software is giving trouble in production, you will get troubled.
+**** Feature flag
+1. How can you be confident that your software will run successfully in production?
+2. You can set a flag that can be read by your software about what it is going to do when it reaches a decision point.
+3. Ex:
+   - Button color blue or green (cultural experimentation)
+   - New algorithm activation
+   - What percentage of customers get a certain experience
+   - Which customers get an experience
+   - Turn a feature on or off
+**** Dark Launches
+1. Ex: Facebook rolling out its messaging product
+2. For this feature we need the software to be well tested
+*** 13 Hack Events
+**** What? Why?
+1. It gives an opportunities for practicing one of the three ways
+2. Ex:
+   - Technology you wanted to try
+   - Something to help with your daily work
+   - Group event (you get to work with other teams)
+   - No guarantees, except (of the outcome)
+   - Always a success (people are going to get better after hack event)
+**** How do I Run a Hack Event
+1. How long should it be (start small, iterate)
+2. What are the prizes, How are they decided (not bosses)
+3. Who can participate (anyone)
+4. Presentation format (have a limit on time, demo video is required)
+5. Project must be working
+**** Hack Week??
+- Dropbox, Facebook, twitter has this culture
+*** 14 Destructive Testing
+**** Why destructive testing?
+- Site reliability Engineering
+**** Definition of Done
+1. How do I know when my service is ready for production 
+2. Go live check list
+3. Include destructive testing
+4. Network failure, power failure, packet failure
+**** Failure Fridays
+1. What if the software already running on production. (pagerduty has this event)
+2. One Service
+3. Ops team + Service team
+4. One hour
+*** 15 Cross Functional Teams
+**** How do they work?
+[[./slides/15 CrossFunctional Teams/1.png]]
+**** What are the results
+- Team will become balanced over time
+- Team member will be able to take vocation 
+[[./slides/15 CrossFunctional Teams/2.png]]
+** Section 4: Automating
+*** 16 Why Automate?
+**** Why Automate
+1. If we don't automate everybody will hate their job
+2. Instead invest on automation from the beginning
+3. Advantages:
+   - Consistency
+   - Compliance
+   - Repeatability
+   - Testability
+   - Save time building
+   - Saves time maintaining
+**** Kickstart/Jumpstart
+1. Used to create same server using scripts (even cloud servers)
+2. We only get some of the benefits of repeatability. But not rest of the advantages of automation.
+3. We get in to mess of keeping track of servers (like, server A is down for some reason)
+4. Solution is **Configuration Management**
+*** 17 Configuration Management with SaltStack
+**** How to use configuration management?
+1. Enforce states/compliance with states/manifests/recipes
+2. No snowflakes: Don't hand edit machine. Have machines which are repeatable.
+3. Infrastructure as code
+   - Revision control: ([Who, what, when] changes, track it using git or something)
+   - Unit tests
+   - Integration test
+   - Code review
+**** Our first salt state
+1. Have a virtual machine in hand.
+2. Install salt
+   - curl -fsSL https://bootstrap.saltproject.io -o install_salt.sh
+   - sudo sh install_salt.sh -P -M -x python3
+3. Create a root folder
+   - sudo mkdir -p /srv/salt
+4. Go to that directory and Create following files
+   + sudo vim top.sls
+   + Put the following content
+     #+begin_src yaml
+       base:
+         '*':
+           - graphite
+           - tuning
+     #+end_src
+   + sudo vim graphite.sls
+   + Put the following content
+     #+begin_src yaml
+       graphite:
+         pkg.installed:
+           - pkgs:
+             - graphite-web
+             - graphite-carbon
+     #+end_src
+   + sudo vim tuning.sls
+   + Put the following content
+     #+begin_src yaml
+       fs.fle-max:
+         sysctl.present:
+           - value: 65536
+     #+end_src
+*** 18 Configuration Management for Distributed Systems
+**** Reviewing our salt state
+1. Installs two packages
+2. Tunes the OS
+3. Runs locally only
+**** Improving our salt state
+1. Connect to salt master
+2. Start carbon relay service
+**** Installing a salt master and minion
+1. Install salt
+   - curl -fsSL https://bootstrap.saltproject.io -o install_salt.sh
+   - sudo sh install_salt.sh -P -M -x python3
+   - "-M" means get me the master
+2. Check if the master is running. If it is running kill it.
+   - ps -ef | grep salt-master
+   - sudo pkill -9 -f salt-master
+3. Run it
+   - sudo systemctl start salt-master
+4. Master <-> minion communication.
+   1. sudo vim /etc/salt/minion. Look for 'Set location of the salt master server. Update "master: localhost".
+   2. Restart the minion 'sudo systemctl restart salt-minion'
+   3. Now check whether minion can talk master
+      - sudo salt-call state.highstate
+      - we might get a error "Minion failed to authenticate with the master, has the minion key been accepted?"
+      - sudo salt-key -L. There you can see one unaccepted key 
+      - Accept it sudo salt-key -L
+      - Now you can run "sudo salt-call state.highstate".
+   4. Check master can talk to minion.
+      - sudo salt '[ZWS]*' test.ping
+      - Minion answers true.
+5. Improve connectivity
+   1. Run carbon-cache service. In order to do that, edit graphite.sls
+      #+begin_src yaml
+        graphite:
+          pkg.installed:
+            - pkgs:
+              - graphite-web
+              - graphite-carbon
+
+        carbon-cache:
+          service.running:
+            - enable: True
+      #+end_src
+   2. Run highstate.
+      - "sudo salt '*' state.highstate" (meaning: any minions out there run highstate)
+      - you should see carbon-cache running
+*** 19 What about Containers
+**** What are containers?
+1. We have discussed about three ways of doing things.
+   - Optimize flow
+   - get faster feedback
+   - run more experiments
+2. Great things about containers is it allows us to do all these things.
+3. Before containers we had packages like DEBS and RPMS.
+4. We don't need process using same resources, so there were JAILS and ZONES.
+5. Eventually Linux got LXC.
+   - Combination of able to package things up, control for dependency management and have isolation.
+   - Basically they are called as containers.
+**** Advantages of containers
+1. Have all requirements.
+2. Same bits.
+3. Have some isolation.
+   - Isolation not to extent of virtual machines.
+   - They can share libraries.
+   - Multiple virtual machines might wreck the machine.
+4. Start/Stop in fraction of a second.
+**** When do I use which?
+1. Configuration management
+   - Configure the pipeline
+   - Configure the host
+   - Configure the repositories
+2. Containers
+   - Package up all the dependencies
+   - Configure the application
+   - Configure the run time
+*** 20 Building and Running a Docker Container
+**** Installing, Building, and Running docker
+1. SSH to EC2
+2. Install docker (curl or apt-get)
+3. Check docker is running
+   - sudo systemctl status docker 
+   - sudo docker run hello-world
+4. Create a Dockerfile
+   #+begin_src text
+     # what operating system
+     FROM ubuntu
+     # some metadata
+     LABEL Description="Mastering DevOps" Version="1.0"
+     # install the packages
+     RUN apt-get update && apt-get install -y \
+         graphite-carbon
+     # which TCP port for carbon
+     EXPOSE 2003
+     # where to write the data
+     VOLUME /var/lib/graphite/whisper
+     # --nodaemon because we'll detach in 'docker run'
+     ENTRYPOINT /usr/bin/carbon-cache --config /etc/carbon/carbon.conf --nodaemon start
+   #+end_src
+5. Built it
+   - sudo docker build -t graphite .
+6. check images
+   - sudo docker images
+7. We have the image, run it as container
+   - sudo docker run -it -d -p 2003:2003 --name devops graphite
+8. Check if it is running
+   - sudo docker ps
+   - sudo docker ps -a (for what else is running)
+9. Check if the port is listening in 2003
+   - telnet localhost 2003
+** Section 5
+*** 21 What is Continuous Delivery
+**** What is it?
+1. We are focusing on Development/Testing from (Product -> Development/Testing -> Release -> Operations)
+2. Development and Testing must be:
+   1) Automated/Repeatable
+   2) Run to the pain (optimize flow)
+   3) Version controlled
+   4) Always deployable (always have the working code)
+   5) Everyone's responsibility (to get the software from development to release)
+**** What does a CD system look like?
+[[./slides/21 What is Continuous Delivery/21 What is Continuous Delivery.png]]
+*** 22 Your First Test Environment
+**** Start with
+- Install vagrant and virtual box
+- vagrant box add ubuntu/trusty64
+**** Create Vagrantfile
+#+begin_src text
+  # -*- mode: ruby -*-
+  # vi: set ft=ruby :
+
+  Vagrant.configure("2") do |config|
+    # Every Vagrant development environment requires a box. You can search for
+    # boxes at https://atlas.hashicorp.com/search.
+    config.vm.box = "ubuntu/trusty64"
+    config.vm.box_check_update = false
+    #
+    config.vm.provider "virtualbox" do |vb|
+       # Display the VirtualBox GUI when booting the machine
+      vb.gui = true
+
+       # Customize the amount of memory on the VM:
+       #vb.memory = "1024"
+     end
+
+    # Enable provisioning with a shell script. Additional provisioners such as
+    # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
+    # documentation for more information about their specific syntax and use.
+    config.vm.provision "shell", inline: <<-SHELL
+       apt-get update
+       apt-get install -y apache2 graphite-web
+      SHELL
+  end
+#+end_src
+**** Run it
+1. vagrant up
+2. vagrant ssh
+3. vagrant status
+4. vagrant destroy -f
+*** 23 Configuring and Launching with Vagrant
+**** Working with Vagrant
+1. You need to have folder structure and files like here
+   [[https://github.com/dmangot/Mastering-DevOps/tree/master/Section5/Video3/toplevel]]
+2. Check out the vagrant file for how the two machines are configured
+3. Do this
+   1) vagrant status
+   2) vagrant up master && vagrant up minion
+   3) vagrant status
+   4)  vagrant ssh master
