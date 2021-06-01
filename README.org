@@ -456,10 +456,16 @@ great for IT performance, as we as organizational performance"
 *** 23 Configuring and Launching with Vagrant
 **** Working with Vagrant
 1. You need to have folder structure and files like here
-   [[https://github.com/dmangot/Mastering-DevOps/tree/master/Section5/Video3/toplevel]]
+   [[./slides/23 Configuring and Launching with Vagrant/1.png]]
 2. Check out the vagrant file for how the two machines are configured
+   [[./lab/working-with-vagrant/vagrant/Vagrantfile]]
 3. Do this
    1) vagrant status
    2) vagrant up master && vagrant up minion
    3) vagrant status
-   4)  vagrant ssh master
+   4) vagrant ssh master
+      - sudo salt '*' test.ping
+      - sudo salt 'minion' state.highstate
+      - Change tuning file in local machine (ex: change the file descriptor value to 120000)
+      - sudo salt 'minion' state.highstate
+      - You can see those changes
